@@ -23,18 +23,13 @@ x_index = tokenizer.word_index
 seq_x_index = tokenizer.texts_to_sequences(x_vals)
 headlines = pad_sequences(seq_x_index, padding = 'post')
 
-print(
+#print(x_index)
+print(x_vals[0])
+print(seq_x_index[0])
+arr = [379, 361, 155, 1086, 2319, 6, 397, 241, 78, 85, 267, 189, 10, 304]
+print(headlines[0])
+for thing in headlines[0]:
+    for key, value in x_index.items():
+        if value == thing:
+            print(f'{value}, {key}')
 
-"""
-headline_train, headline_test, category_train, category_test = train_test_split(headlines, categories, random_state=0, stratify=categories)
-
-print(f'{headline_train[0]}, {category_train[0]}')
-
-target_headline = headlines[0]
-
-for word in target_headline: 
-    if word != 0:
-        for key, value in x_index.items():
-            if value == word:
-                print(f'{value}, {key}')
-"""
